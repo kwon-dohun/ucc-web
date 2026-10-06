@@ -48,7 +48,7 @@ export default async function EventConsole({ params, searchParams }: PageProps<"
           <p className="mt-4 text-[22px] leading-9 font-bold md:text-[26px] md:leading-10">
             {st.sold_out_minutes != null ? (
               <>
-                <span className="text-coral-ink">{minutesLabel(st.sold_out_minutes)}</span> 만에 {st.total}개 마감.
+                <span className="text-ink">{minutesLabel(st.sold_out_minutes)}</span> 만에 {st.total}개 마감.
               </>
             ) : (
               <>{st.applied}명이 신청했어요.</>

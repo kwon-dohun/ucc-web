@@ -64,7 +64,7 @@ export default async function SeriesPage({ params }: PageProps<"/manage/history/
                   <ul className="mt-2 space-y-1">
                     {opts.map((o) => (
                       <li key={o.name} className="text-[14px]">
-                        <span className={o === firstOut && opts.length > 1 ? "font-semibold text-coral-ink" : "font-medium"}>
+                        <span className={o === firstOut && opts.length > 1 ? "font-bold text-ink" : "font-medium"}>
                           {o.name} {o.quantity}개
                         </span>
                         {o.sold_out_minutes != null ? <span className="text-ink-3">, {minutesLabel(o.sold_out_minutes)} 만에 끝</span> : null}

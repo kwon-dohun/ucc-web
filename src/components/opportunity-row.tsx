@@ -46,7 +46,7 @@ export function OpportunityRow({
         <p className="mt-0.5 line-clamp-1 text-[13px] text-ink-3">
           {o.starts_at ? `${fmtDate(o.starts_at)}${o.location ? `, ${o.location}` : ""}` : o.summary}
         </p>
-        {showReason && reason ? <p className="mt-1.5 text-[13px] font-medium text-coral-ink">{reason}</p> : null}
+        {showReason && reason ? <p className="mt-1.5 text-[13px] font-medium text-ink-2">{reason}</p> : null}
       </div>
       <div className="relative z-10 self-start">
         <SaveButton id={o.id} saved={saved} compact />

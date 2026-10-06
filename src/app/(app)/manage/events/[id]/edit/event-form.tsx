@@ -352,7 +352,7 @@ export function EventForm({ orgTitle, orgRoom, event, options, source, past, off
                   <p className="mt-0.5 text-[13.5px] leading-5 font-semibold">{p.stats?.options?.map((o) => `${o.name} ${o.quantity}개`).join(", ") || p.title}</p>
                   {p.stats?.sold_out_minutes ? (
                     <p className="mt-1 text-[12.5px] text-ink-3">
-                      <b className="font-semibold text-coral-ink">{minutesLabel(p.stats.sold_out_minutes)}</b> 만에 마감 · 안 온 신청자 {p.stats.no_show}명
+                      <b className="font-semibold text-ink">{minutesLabel(p.stats.sold_out_minutes)}</b> 만에 마감 · 안 온 신청자 {p.stats.no_show}명
                     </p>
                   ) : null}
                 </li>

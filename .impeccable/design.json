@@ -1,0 +1,600 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T10:45:25.279Z",
+  "title": "Design System: UCC 유크크",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Cool Ground",
+        "canonical": "oklch(97% 0.003 265)",
+        "tonalRamp": [
+          "oklch(15% 0.006 265)",
+          "oklch(25% 0.006 265)",
+          "oklch(35% 0.006 265)",
+          "oklch(45% 0.006 265)",
+          "oklch(55% 0.006 265)",
+          "oklch(70% 0.006 265)",
+          "oklch(85% 0.002 265)",
+          "oklch(95% 0.002 265)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Work Surface",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0.004 265)",
+          "oklch(25% 0.004 265)",
+          "oklch(35% 0.004 265)",
+          "oklch(45% 0.004 265)",
+          "oklch(55% 0.004 265)",
+          "oklch(70% 0.004 265)",
+          "oklch(85% 0.001 265)",
+          "oklch(95% 0.001 265)"
+        ]
+      },
+      "surface-2": {
+        "role": "neutral",
+        "displayName": "Carried Grey",
+        "canonical": "oklch(98.5% 0.002 265)",
+        "tonalRamp": [
+          "oklch(15% 0.006 265)",
+          "oklch(25% 0.006 265)",
+          "oklch(35% 0.006 265)",
+          "oklch(45% 0.006 265)",
+          "oklch(55% 0.006 265)",
+          "oklch(70% 0.006 265)",
+          "oklch(85% 0.002 265)",
+          "oklch(95% 0.002 265)"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel Grey",
+        "canonical": "oklch(95% 0.005 265)",
+        "tonalRamp": [
+          "oklch(15% 0.008 265)",
+          "oklch(25% 0.008 265)",
+          "oklch(35% 0.008 265)",
+          "oklch(45% 0.008 265)",
+          "oklch(55% 0.008 265)",
+          "oklch(70% 0.008 265)",
+          "oklch(85% 0.003 265)",
+          "oklch(95% 0.003 265)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(21% 0.01 260)",
+        "tonalRamp": [
+          "oklch(15% 0.012 260)",
+          "oklch(25% 0.012 260)",
+          "oklch(35% 0.012 260)",
+          "oklch(45% 0.012 260)",
+          "oklch(55% 0.012 260)",
+          "oklch(70% 0.012 260)",
+          "oklch(85% 0.004 260)",
+          "oklch(95% 0.004 260)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "canonical": "oklch(43% 0.02 260)",
+        "tonalRamp": [
+          "oklch(15% 0.020 260)",
+          "oklch(25% 0.020 260)",
+          "oklch(35% 0.020 260)",
+          "oklch(45% 0.020 260)",
+          "oklch(55% 0.020 260)",
+          "oklch(70% 0.020 260)",
+          "oklch(85% 0.007 260)",
+          "oklch(95% 0.007 260)"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Ink 3",
+        "canonical": "oklch(55% 0.02 260)",
+        "tonalRamp": [
+          "oklch(15% 0.020 260)",
+          "oklch(25% 0.020 260)",
+          "oklch(35% 0.020 260)",
+          "oklch(45% 0.020 260)",
+          "oklch(55% 0.020 260)",
+          "oklch(70% 0.020 260)",
+          "oklch(85% 0.007 260)",
+          "oklch(95% 0.007 260)"
+        ]
+      },
+      "ink-4": {
+        "role": "neutral",
+        "displayName": "Ink 4",
+        "canonical": "oklch(74% 0.015 260)",
+        "tonalRamp": [
+          "oklch(15% 0.015 260)",
+          "oklch(25% 0.015 260)",
+          "oklch(35% 0.015 260)",
+          "oklch(45% 0.015 260)",
+          "oklch(55% 0.015 260)",
+          "oklch(70% 0.015 260)",
+          "oklch(85% 0.005 260)",
+          "oklch(95% 0.005 260)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "canonical": "oklch(92% 0.007 260)",
+        "tonalRamp": [
+          "oklch(15% 0.008 260)",
+          "oklch(25% 0.008 260)",
+          "oklch(35% 0.008 260)",
+          "oklch(45% 0.008 260)",
+          "oklch(55% 0.008 260)",
+          "oklch(70% 0.008 260)",
+          "oklch(85% 0.003 260)",
+          "oklch(95% 0.003 260)"
+        ]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Strong Line",
+        "canonical": "oklch(86% 0.01 260)",
+        "tonalRamp": [
+          "oklch(15% 0.010 260)",
+          "oklch(25% 0.010 260)",
+          "oklch(35% 0.010 260)",
+          "oklch(45% 0.010 260)",
+          "oklch(55% 0.010 260)",
+          "oklch(70% 0.010 260)",
+          "oklch(85% 0.003 260)",
+          "oklch(95% 0.003 260)"
+        ]
+      },
+      "coral": {
+        "role": "primary",
+        "displayName": "Signal Coral",
+        "canonical": "oklch(64% 0.2 29)",
+        "tonalRamp": [
+          "oklch(15% 0.190 29)",
+          "oklch(25% 0.190 29)",
+          "oklch(35% 0.190 29)",
+          "oklch(45% 0.190 29)",
+          "oklch(55% 0.190 29)",
+          "oklch(70% 0.190 29)",
+          "oklch(85% 0.066 29)",
+          "oklch(95% 0.066 29)"
+        ]
+      },
+      "coral-deep": {
+        "role": "primary",
+        "displayName": "Pressed Coral",
+        "canonical": "oklch(56% 0.19 30)",
+        "tonalRamp": [
+          "oklch(15% 0.190 29)",
+          "oklch(25% 0.190 29)",
+          "oklch(35% 0.190 29)",
+          "oklch(45% 0.190 29)",
+          "oklch(55% 0.190 29)",
+          "oklch(70% 0.190 29)",
+          "oklch(85% 0.066 29)",
+          "oklch(95% 0.066 29)"
+        ]
+      },
+      "coral-ink": {
+        "role": "primary",
+        "displayName": "Coral Ink",
+        "canonical": "oklch(50% 0.17 32)",
+        "tonalRamp": [
+          "oklch(15% 0.170 32)",
+          "oklch(25% 0.170 32)",
+          "oklch(35% 0.170 32)",
+          "oklch(45% 0.170 32)",
+          "oklch(55% 0.170 32)",
+          "oklch(70% 0.170 32)",
+          "oklch(85% 0.059 32)",
+          "oklch(95% 0.059 32)"
+        ]
+      },
+      "coral-tint": {
+        "role": "primary",
+        "displayName": "Coral Wash",
+        "canonical": "oklch(96% 0.02 25)",
+        "tonalRamp": [
+          "oklch(15% 0.150 29)",
+          "oklch(25% 0.150 29)",
+          "oklch(35% 0.150 29)",
+          "oklch(45% 0.150 29)",
+          "oklch(55% 0.150 29)",
+          "oklch(70% 0.150 29)",
+          "oklch(85% 0.052 29)",
+          "oklch(95% 0.052 29)"
+        ]
+      },
+      "coral-line": {
+        "role": "primary",
+        "displayName": "Coral Rule",
+        "canonical": "oklch(84% 0.08 25)",
+        "tonalRamp": [
+          "oklch(15% 0.150 29)",
+          "oklch(25% 0.150 29)",
+          "oklch(35% 0.150 29)",
+          "oklch(45% 0.150 29)",
+          "oklch(55% 0.150 29)",
+          "oklch(70% 0.150 29)",
+          "oklch(85% 0.052 29)",
+          "oklch(95% 0.052 29)"
+        ]
+      },
+      "green": {
+        "role": "secondary",
+        "displayName": "Available Green",
+        "canonical": "oklch(60% 0.12 165)",
+        "tonalRamp": [
+          "oklch(15% 0.120 165)",
+          "oklch(25% 0.120 165)",
+          "oklch(35% 0.120 165)",
+          "oklch(45% 0.120 165)",
+          "oklch(55% 0.120 165)",
+          "oklch(70% 0.120 165)",
+          "oklch(85% 0.042 165)",
+          "oklch(95% 0.042 165)"
+        ]
+      },
+      "green-ink": {
+        "role": "secondary",
+        "displayName": "Available Green Ink",
+        "canonical": "oklch(50% 0.1 165)",
+        "tonalRamp": [
+          "oklch(15% 0.100 165)",
+          "oklch(25% 0.100 165)",
+          "oklch(35% 0.100 165)",
+          "oklch(45% 0.100 165)",
+          "oklch(55% 0.100 165)",
+          "oklch(70% 0.100 165)",
+          "oklch(85% 0.035 165)",
+          "oklch(95% 0.035 165)"
+        ]
+      },
+      "green-tint": {
+        "role": "secondary",
+        "displayName": "Available Green Wash",
+        "canonical": "oklch(96% 0.02 170)",
+        "tonalRamp": [
+          "oklch(15% 0.100 165)",
+          "oklch(25% 0.100 165)",
+          "oklch(35% 0.100 165)",
+          "oklch(45% 0.100 165)",
+          "oklch(55% 0.100 165)",
+          "oklch(70% 0.100 165)",
+          "oklch(85% 0.035 165)",
+          "oklch(95% 0.035 165)"
+        ]
+      },
+      "amber-ink": {
+        "role": "tertiary",
+        "displayName": "Late Amber Ink",
+        "canonical": "oklch(50% 0.11 75)",
+        "tonalRamp": [
+          "oklch(15% 0.110 75)",
+          "oklch(25% 0.110 75)",
+          "oklch(35% 0.110 75)",
+          "oklch(45% 0.110 75)",
+          "oklch(55% 0.110 75)",
+          "oklch(70% 0.110 75)",
+          "oklch(85% 0.038 75)",
+          "oklch(95% 0.038 75)"
+        ]
+      },
+      "amber-tint": {
+        "role": "tertiary",
+        "displayName": "Late Amber Wash",
+        "canonical": "oklch(96.5% 0.035 85)",
+        "tonalRamp": [
+          "oklch(15% 0.110 75)",
+          "oklch(25% 0.110 75)",
+          "oklch(35% 0.110 75)",
+          "oklch(45% 0.110 75)",
+          "oklch(55% 0.110 75)",
+          "oklch(70% 0.110 75)",
+          "oklch(85% 0.038 75)",
+          "oklch(95% 0.038 75)"
+        ]
+      },
+      "dept-plan": {
+        "role": "department",
+        "displayName": "Plan Blue",
+        "canonical": "oklch(52% 0.21 268)",
+        "tonalRamp": [
+          "oklch(15% 0.200 268)",
+          "oklch(25% 0.200 268)",
+          "oklch(35% 0.200 268)",
+          "oklch(45% 0.200 268)",
+          "oklch(55% 0.200 268)",
+          "oklch(70% 0.200 268)",
+          "oklch(85% 0.070 268)",
+          "oklch(95% 0.070 268)"
+        ]
+      },
+      "dept-admin": {
+        "role": "department",
+        "displayName": "Admin Green",
+        "canonical": "oklch(60% 0.12 165)",
+        "tonalRamp": [
+          "oklch(15% 0.120 165)",
+          "oklch(25% 0.120 165)",
+          "oklch(35% 0.120 165)",
+          "oklch(45% 0.120 165)",
+          "oklch(55% 0.120 165)",
+          "oklch(70% 0.120 165)",
+          "oklch(85% 0.042 165)",
+          "oklch(95% 0.042 165)"
+        ]
+      },
+      "dept-promo": {
+        "role": "department",
+        "displayName": "Promo Coral",
+        "canonical": "oklch(64% 0.2 29)",
+        "tonalRamp": [
+          "oklch(15% 0.190 29)",
+          "oklch(25% 0.190 29)",
+          "oklch(35% 0.190 29)",
+          "oklch(45% 0.190 29)",
+          "oklch(55% 0.190 29)",
+          "oklch(70% 0.190 29)",
+          "oklch(85% 0.066 29)",
+          "oklch(95% 0.066 29)"
+        ]
+      },
+      "dept-head": {
+        "role": "department",
+        "displayName": "Head Violet",
+        "canonical": "oklch(56% 0.17 293)",
+        "tonalRamp": [
+          "oklch(15% 0.170 293)",
+          "oklch(25% 0.170 293)",
+          "oklch(35% 0.170 293)",
+          "oklch(45% 0.170 293)",
+          "oklch(55% 0.170 293)",
+          "oklch(70% 0.170 293)",
+          "oklch(85% 0.059 293)",
+          "oklch(95% 0.059 293)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Landing/role-picker headline only."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Live remaining/applied counts; rolls on change; tabular."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page titles written as sentences; 22px mobile, 24px desktop."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section and form-group titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Rows, descriptions, status sentences."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Timestamps, hints, asides, sublines."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Badges and tab-bar labels; no uppercase, no tracking."
+      }
+    },
+    "shadows": [
+      {
+        "name": "rest-lift",
+        "value": "0 1px 2px rgba(21,24,29,0.06), 0 2px 6px -2px rgba(21,24,29,0.06)",
+        "purpose": "Live panel, feature cards, active nav row, selected tab, coral primary button."
+      },
+      {
+        "name": "float",
+        "value": "0 2px 4px rgba(21,24,29,0.04), 0 10px 24px -12px rgba(21,24,29,0.18)",
+        "purpose": "Dropdown pickers and the landing role card."
+      }
+    ],
+    "motion": [
+      {
+        "name": "roll-in",
+        "value": "320ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Rolling number: translateY(55%) + 2px blur to rest when a count changes."
+      },
+      {
+        "name": "row-in",
+        "value": "1600ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "New applicant row flashes coral wash and fades to transparent."
+      },
+      {
+        "name": "control",
+        "value": "150ms",
+        "purpose": "Button background/color/shadow/transform transitions; 1px press on :active."
+      },
+      {
+        "name": "bar",
+        "value": "500ms ease-out",
+        "purpose": "Remaining-stock bar width."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "none",
+        "purpose": "roll-in and row-in are disabled under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one coral action per surface (새 행사 만들기, 공개하기, 행사 끝내기).",
+      "html": "<button class=\"ds-btn-primary\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"M12 5v14\"/></svg>새 행사 만들기</button>",
+      "css": ".ds-btn-primary{display:inline-flex; align-items:center; justify-content:center; gap:6px; height:40px; padding:0 16px; border-radius:10px; font-size:14px; font-weight:600; border:none; cursor:pointer; transition:background-color 150ms, color 150ms, box-shadow 150ms, transform 150ms; font-family: var(--font-pretendard, 'Pretendard Variable', system-ui, sans-serif); letter-spacing: -0.012em; background:var(--coral,#f0503f); color:#fff; box-shadow:var(--shadow-sm, 0 1px 2px rgba(21,24,29,.06), 0 2px 6px -2px rgba(21,24,29,.06));} .ds-btn-primary:hover{background:var(--coral-deep,#d3382a);} .ds-btn-primary:active{transform:translateY(1px);} .ds-btn-primary:focus-visible{outline:2px solid var(--coral, #f0503f); outline-offset:2px;}"
+    },
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Repeated field action (드리고 체크, 1개 줬어요) so coral stays scarce.",
+      "html": "<button class=\"ds-btn-ink\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 6 9 17l-5-5\"/></svg>드리고 체크</button>",
+      "css": ".ds-btn-ink{display:inline-flex; align-items:center; justify-content:center; gap:6px; height:40px; padding:0 16px; border-radius:10px; font-size:14px; font-weight:600; border:none; cursor:pointer; transition:background-color 150ms, color 150ms, box-shadow 150ms, transform 150ms; font-family: var(--font-pretendard, 'Pretendard Variable', system-ui, sans-serif); letter-spacing: -0.012em; background:var(--ink,#15181d); color:#fff;} .ds-btn-ink:hover{background:var(--ink-2,#4a515c);} .ds-btn-ink:active{transform:translateY(1px);} .ds-btn-ink:focus-visible{outline:2px solid var(--coral, #f0503f); outline-offset:2px;}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Default button: white with a strong 1px line.",
+      "html": "<button class=\"ds-btn-secondary\">저장</button>",
+      "css": ".ds-btn-secondary{display:inline-flex; align-items:center; justify-content:center; gap:6px; height:40px; padding:0 16px; border-radius:10px; font-size:14px; font-weight:600; border:none; cursor:pointer; transition:background-color 150ms, color 150ms, box-shadow 150ms, transform 150ms; font-family: var(--font-pretendard, 'Pretendard Variable', system-ui, sans-serif); letter-spacing: -0.012em; background:var(--surface,#fff); color:var(--ink,#15181d); border:1px solid var(--line-strong,#cfd4db);} .ds-btn-secondary:hover{background:var(--surface-2,#f9fafb); border-color:var(--ink-4,#a3aab5);} .ds-btn-secondary:active{transform:translateY(1px);} .ds-btn-secondary:focus-visible{outline:2px solid var(--coral, #f0503f); outline-offset:2px;}"
+    },
+    {
+      "name": "Status Badges",
+      "kind": "chip",
+      "refersTo": "badge-live",
+      "description": "Live phase badge with pulsing coral dot; amber for late/dispute.",
+      "html": "<span class=\"ds-badge-live\"><span class=\"ds-badge-dot\"></span>신청 중</span> <span class=\"ds-badge-amber\">본인 확인 요청</span>",
+      "css": ".ds-badge-live,.ds-badge-amber{display:inline-flex; align-items:center; gap:4px; padding:2px 6px; border-radius:6px; font-size:11.5px; line-height:16px; font-weight:600; font-family: var(--font-pretendard, 'Pretendard Variable', system-ui, sans-serif); letter-spacing: -0.012em;} .ds-badge-live{background:var(--coral-tint,#fdeeec); color:var(--coral-ink,#b8301f);} .ds-badge-amber{background:var(--amber-tint,#fdf3dc); color:var(--amber-ink,#8a5a00);} .ds-badge-dot{width:6px; height:6px; border-radius:9999px; background:var(--coral,#f0503f); animation:ds-pulse 2s cubic-bezier(.4,0,.6,1) infinite;} @keyframes ds-pulse{50%{opacity:.5}} @media (prefers-reduced-motion:reduce){.ds-badge-dot{animation:none}}"
+    },
+    {
+      "name": "Blank and Carried Fields",
+      "kind": "input",
+      "refersTo": "field-blank",
+      "description": "Duplicate-form signature: coral dashed blank to change, grey field carried from last time.",
+      "html": "<div class=\"ds-form\"><label class=\"ds-row\"><span class=\"ds-lbl\">날짜</span><span class=\"ds-blank\"><input placeholder=\"연도-월-일\" aria-label=\"수령 날짜\"></span></label><label class=\"ds-row\"><span class=\"ds-lbl\">장소<small>자주 쓰는 곳</small></span><span class=\"ds-carried\"><input value=\"프론티어관 201-2호 학생회실\" aria-label=\"장소\"></span></label></div>",
+      "css": ".ds-form{display:grid; gap:12px; max-width:520px; font-family: var(--font-pretendard, 'Pretendard Variable', system-ui, sans-serif); letter-spacing: -0.012em;} .ds-row{display:grid; grid-template-columns:104px 1fr; gap:16px; align-items:center;} .ds-lbl{font-size:13.5px; font-weight:500; color:var(--ink-2,#4a515c);} .ds-lbl small{display:block; font-size:11.5px; font-weight:400; color:var(--ink-4,#a3aab5);} .ds-blank,.ds-carried{display:flex; align-items:center; height:44px; border-radius:10px; font-size:14.5px; transition:border-color 150ms, color 150ms;} .ds-blank{border:2px dashed var(--coral,#f0503f); background:rgba(253,238,236,.6); color:var(--coral-ink,#b8301f);} .ds-blank:focus-within{box-shadow:0 0 0 2px var(--coral-line,#f6b9b1);} .ds-carried{border:1px solid var(--line,#e3e6eb); background:var(--surface-2,#f9fafb); color:var(--ink-3,#6b7380);} .ds-carried:focus-within{border-color:var(--ink-4,#a3aab5); color:var(--ink,#15181d);} .ds-blank input,.ds-carried input{all:unset; width:100%; height:100%; padding:0 12px; caret-color:var(--coral,#f0503f);} .ds-blank input::placeholder{color:rgba(184,48,31,.6);}"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "48px field-use search (name or student ID) with a coral focus border.",
+      "html": "<label class=\"ds-search\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input placeholder=\"이름이나 학번으로 찾기\"></label>",
+      "css": ".ds-search{position:relative; display:block; max-width:420px; color:var(--ink-3,#6b7380); font-family: var(--font-pretendard, 'Pretendard Variable', system-ui, sans-serif); letter-spacing: -0.012em;} .ds-search svg{position:absolute; left:14px; top:50%; transform:translateY(-50%);} .ds-search input{width:100%; height:48px; padding:0 16px 0 40px; border-radius:12px; border:1px solid var(--line-strong,#cfd4db); background:var(--surface,#fff); font-size:15px; color:var(--ink,#15181d); outline:none; caret-color:var(--coral,#f0503f); transition:border-color 150ms;} .ds-search input::placeholder{color:var(--ink-4,#a3aab5);} .ds-search input:focus{border-color:var(--coral,#f0503f);}"
+    },
+    {
+      "name": "Sidebar Nav",
+      "kind": "nav",
+      "refersTo": "nav-row-active",
+      "description": "Grouped sidebar rows; the active row is a lifted white surface with a coral icon.",
+      "html": "<nav class=\"ds-nav\"><p class=\"ds-nav-group\">원세컨드 학생회</p><a class=\"ds-nav-row is-active\" href=\"#\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"/><path d=\"M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/></svg>운영 홈</a><a class=\"ds-nav-row\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg>찾기</a></nav>",
+      "css": ".ds-nav{display:flex; flex-direction:column; gap:2px; width:216px; padding:12px; background:rgba(238,240,243,.6); font-family: var(--font-pretendard, 'Pretendard Variable', system-ui, sans-serif); letter-spacing: -0.012em;} .ds-nav-group{margin:0 0 6px; padding:0 10px; font-size:12px; font-weight:600; color:var(--ink-3,#6b7380);} .ds-nav-row{display:flex; align-items:center; gap:10px; height:36px; padding:0 10px; border-radius:8px; font-size:14px; font-weight:500; color:var(--ink-2,#4a515c); text-decoration:none; transition:background-color 150ms, color 150ms;} .ds-nav-row svg{color:var(--ink-3,#6b7380);} .ds-nav-row:hover{background:rgba(227,230,235,.6); color:var(--ink,#15181d);} .ds-nav-row.is-active{background:var(--surface,#fff); color:var(--ink,#15181d); box-shadow:var(--shadow-sm, 0 1px 2px rgba(21,24,29,.06), 0 2px 6px -2px rgba(21,24,29,.06));} .ds-nav-row.is-active svg{color:var(--coral,#f0503f);} .ds-nav-row:focus-visible{outline:2px solid var(--coral, #f0503f); outline-offset:2px;}"
+    },
+    {
+      "name": "Choice Chips",
+      "kind": "chip",
+      "refersTo": "chip-choice-selected",
+      "description": "Radio pills; the selected pill is ink-filled.",
+      "html": "<div class=\"ds-chips\" role=\"radiogroup\"><button class=\"ds-chip\" role=\"radio\" aria-checked=\"true\">우리 학과</button><button class=\"ds-chip\" role=\"radio\" aria-checked=\"false\">단과대</button><button class=\"ds-chip\" role=\"radio\" aria-checked=\"false\">학교 전체</button></div>",
+      "css": ".ds-chips{display:flex; gap:6px; font-family: var(--font-pretendard, 'Pretendard Variable', system-ui, sans-serif); letter-spacing: -0.012em;} .ds-chip{height:36px; padding:0 14px; border-radius:9999px; font-family:inherit; font-size:13px; font-weight:600; cursor:pointer; border:1px solid var(--line-strong,#cfd4db); background:var(--surface,#fff); color:var(--ink-2,#4a515c); transition:background-color 150ms, border-color 150ms;} .ds-chip:hover{border-color:var(--ink-4,#a3aab5);} .ds-chip[aria-checked=\"true\"]{background:var(--ink,#15181d); border-color:var(--ink,#15181d); color:#fff;} .ds-chip:focus-visible{outline:2px solid var(--coral, #f0503f); outline-offset:2px;}"
+    },
+    {
+      "name": "Live Event Panel",
+      "kind": "card",
+      "refersTo": "card-feature",
+      "description": "16px feature container: status sentence, then rolling remaining-count cells with coral bars.",
+      "html": "<section class=\"ds-live\"><p class=\"ds-live-sentence\">열린 지 56분, 48명이 신청했어요. 치킨마요덮밥 3개 남았어요.</p><div class=\"ds-live-grid\"><div class=\"ds-cell\"><p class=\"ds-cell-l\">신청</p><p class=\"ds-cell-n\">48<span>/ 60</span></p></div><div class=\"ds-cell\"><p class=\"ds-cell-l\">제육덮밥</p><p class=\"ds-cell-n\">9<span>남음</span></p><div class=\"ds-bar\"><i style=\"width:30%\"></i></div></div><div class=\"ds-cell\"><p class=\"ds-cell-l\">치킨마요덮밥</p><p class=\"ds-cell-n is-low\">3<span>남음</span></p><div class=\"ds-bar\"><i style=\"width:10%\"></i></div></div></div></section>",
+      "css": ".ds-live{max-width:720px; padding:24px; border-radius:16px; border:1px solid var(--line,#e3e6eb); background:var(--surface,#fff); box-shadow:var(--shadow-sm, 0 1px 2px rgba(21,24,29,.06), 0 2px 6px -2px rgba(21,24,29,.06)); color:var(--ink,#15181d); font-family: var(--font-pretendard, 'Pretendard Variable', system-ui, sans-serif); letter-spacing: -0.012em;} .ds-live-sentence{margin:0; font-size:16px; line-height:24px; font-weight:600;} .ds-live-grid{margin-top:12px; display:grid; grid-template-columns:1.1fr 1fr 1fr; gap:1px; overflow:hidden; border-radius:12px; border:1px solid var(--line,#e3e6eb); background:var(--line,#e3e6eb);} .ds-cell{background:var(--surface,#fff); padding:16px;} .ds-cell-l{margin:0; font-size:12.5px; font-weight:500; color:var(--ink-3,#6b7380);} .ds-cell-n{margin:4px 0 0; display:flex; align-items:baseline; gap:4px; font-size:34px; line-height:40px; font-weight:700; font-variant-numeric:tabular-nums; letter-spacing:-0.01em; animation:ds-roll 320ms cubic-bezier(.16,1,.3,1) both;} .ds-cell-n.is-low{color:var(--coral-ink,#b8301f);} .ds-cell-n span{font-size:13px; font-weight:600; color:var(--ink-3,#6b7380);} .ds-bar{margin-top:8px; height:6px; border-radius:9999px; background:var(--panel,#eef0f3); overflow:hidden;} .ds-bar i{display:block; height:100%; border-radius:9999px; background:var(--coral,#f0503f); transition:width 500ms ease-out;} @keyframes ds-roll{from{transform:translateY(55%); opacity:0; filter:blur(2px)} to{transform:none; opacity:1; filter:none}} @media (prefers-reduced-motion:reduce){.ds-cell-n{animation:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Ledger That Carries Forward",
+    "overview": "UCC is a bright, cool working surface where every number is a sentence and every form starts from last year. The page is a cool grey ground with white work surfaces laid on it, a near-black ink, and a single warm coral that only appears where something needs a hand right now: the one primary action, the event that is live, and the blank a person has to fill in. Everything else is grey-scale, so the coral reads as an instruction rather than decoration.\n\nDensity is product-UI density, not dashboard density. It uses the standard pattern of a sidebar and body (a bottom tab bar on mobile), but there are no metric-card grids or charts. Status is written as Korean sentences in 해요체 (\"열린 지 56분, 48명이 신청했어요. 치킨마요덮밥 3개 남았어요.\"), and the large tabular numerals beneath each sentence are its evidence. Records from past terms sit next to the form you are filling in, so the history is part of the work, not a separate report.\n\nDepth is quiet: one-pixel cool lines, faint offset shadows on lifted surfaces only, and no glass, gradients, or icon-tile cards.",
+    "keyCharacteristics": [
+      "Cool grey ground, white surfaces, ink text; coral used for action, the live state, and blanks only.",
+      "Pretendard is the only typeface; every count, time, and ID uses tabular numerals.",
+      "Numbers are written as sentences first and shown as big numerals second.",
+      "Duplicate-form language: grey means \"carried over from last time\", a coral dashed field means \"change this\".",
+      "1px lines, 12px corners, faint offset shadows; flat everywhere else."
+    ],
+    "rules": [
+      {
+        "name": "The Three Coral Jobs Rule",
+        "body": "Coral marks only three things: the primary action, what is happening now, and the blank you must fill. If a coral element is none of these, it should be ink, green, or amber.",
+        "section": "colors"
+      },
+      {
+        "name": "The Amber Is Late Rule",
+        "body": "Overdue, waiting, and out-of-season states use amber tint with amber ink. They never use coral and never red.",
+        "section": "colors"
+      },
+      {
+        "name": "The Never-Color-Alone Rule",
+        "body": "Every colored state also carries words or shape: badges have labels, blanks are dashed, and low stock shows its number.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Every number that can change or be compared (counts, sequence numbers, student IDs, times, D-days) uses tabular numerals so columns do not jitter while rolling.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence-First Rule",
+        "body": "A screen's state is stated in a 해요체 sentence before it is shown as a numeral. The numeral is evidence, not the headline.",
+        "section": "typography"
+      },
+      {
+        "name": "The Title Speaks Alone Rule",
+        "body": "Page titles have no small label stacked above them; context goes in the one-line description underneath.",
+        "section": "typography"
+      },
+      {
+        "name": "The Faint Offset Rule",
+        "body": "Shadows are soft, downward, and ink-tinted. They are never hard offsets, never colored glows, and never stacked heavier than Float.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Solid Chrome Rule",
+        "body": "Sticky bars (mobile top bar, tab bar, form action bar) are 90 to 95% opaque with a small blur so content can pass under them. Cards and panels are always solid; glass is not a surface treatment.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep coral to its three jobs: one primary action per surface, the live/now state, and blanks.",
+      "Do use ink-filled buttons for repeated field actions, so coral stays rare.",
+      "Do use amber tint + amber ink for anything overdue or late.",
+      "Do write state as a 해요체 sentence with numbers in it, then show the tabular numeral underneath.",
+      "Do apply `tabular-nums` (the `num` utility) to every count, ID, time, and D-day.",
+      "Do show carried-over values in grey (surface-2, ink-3) and fields to change as coral dashed blanks.",
+      "Do keep field-use touch targets at 44px or more, and grow 32px controls to 44px on mobile.",
+      "Do use 12px corners and 1px lines by default, and save 16px for the screen's single feature container.",
+      "Do use lucide icons from one set, at 14 to 21px, inline with text."
+    ],
+    "donts": [
+      "Don't build metric-card grids, charts, or KPI tiles. Numbers belong in sentences and the live panel.",
+      "Don't use coral for overdue states, record statistics, or decoration.",
+      "Don't use glass cards, gradients, or icon-in-a-tile cards.",
+      "Don't add a second typeface, uppercase labels, or letter-spaced captions.",
+      "Don't stack a small label or eyebrow above page titles.",
+      "Don't use hard offset shadows, colored glows, or shadows heavier than Float.",
+      "Don't use department colors outside calendar layers and the org chart.",
+      "Don't signal a state with color alone. Pair it with a word, a count, or a dashed/solid shape."
+    ]
+  }
+}

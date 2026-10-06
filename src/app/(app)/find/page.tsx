@@ -101,7 +101,7 @@ export default async function Find({ searchParams }: PageProps<"/find">) {
           <p className="mt-1 text-[20px] font-bold">
             <span className="num">{epic.total}</span>
             <span className="text-ink-3"> / {EPIC_GOAL}점</span>
-            <span className="ml-2 text-[14px] font-semibold text-coral-ink">{Math.max(0, EPIC_GOAL - epic.total)}점 남음</span>
+            <span className="ml-2 text-[14px] font-semibold text-ink-2">{Math.max(0, EPIC_GOAL - epic.total)}점 남음</span>
           </p>
           <div className="mt-3 flex h-2 overflow-hidden rounded-full bg-panel" aria-hidden>
             <span className="bg-d-plan" style={{ width: `${(epic.language / EPIC_GOAL) * 100}%` }} />

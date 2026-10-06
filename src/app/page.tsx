@@ -99,7 +99,7 @@ export default async function Landing({ searchParams }: PageProps<"/">) {
                 <span className="num pt-0.5 text-[12.5px] font-semibold text-ink-3">{h.term}</span>
                 <div className="min-w-0">
                   <p className="text-[14.5px] leading-6 font-semibold">
-                    {h.menu}, <span className="text-coral-ink">{h.minutes}</span> 만에 마감
+                    {h.menu}, <b className="font-bold">{h.minutes}</b> 만에 마감
                   </p>
                   <p className="text-[13px] text-ink-3">안 온 신청자 {h.noShow}명</p>
                   <p className="mt-2 rounded-lg bg-surface-2 px-3 py-2 text-[13px] leading-5 text-ink-2">
