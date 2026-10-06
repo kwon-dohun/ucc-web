@@ -1,4 +1,5 @@
 import { ArrowRight, Check } from "lucide-react";
+import { SubmitButton } from "@/components/submit-button";
 import { enterAs } from "@/app/actions/session";
 import { cn } from "@/lib/utils";
 
@@ -54,8 +55,9 @@ export default async function Landing({ searchParams }: PageProps<"/">) {
         <div className="mt-9 max-w-md space-y-2.5">
           {ROLES.map((r, i) => (
             <form key={r.role} action={enterAs.bind(null, r.role)}>
-              <button
+              <SubmitButton
                 type="submit"
+                pendingText={<span className="py-3 text-[15px] font-bold">들어가는 중</span>}
                 className={cn(
                   "group flex w-full items-center gap-4 rounded-xl px-4 text-left transition-[background-color,border-color,transform] duration-150 active:translate-y-px",
                   i === 0
@@ -71,7 +73,7 @@ export default async function Landing({ searchParams }: PageProps<"/">) {
                   <span className={cn("mt-0.5 block text-[13px] leading-5", i === 0 ? "text-white/85" : "text-ink-3")}>{r.sub}</span>
                 </span>
                 <ArrowRight className="size-[18px] shrink-0 transition-transform duration-150 group-hover:translate-x-0.5" />
-              </button>
+              </SubmitButton>
             </form>
           ))}
         </div>

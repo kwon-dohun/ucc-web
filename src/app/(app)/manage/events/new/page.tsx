@@ -1,4 +1,5 @@
 import { CalendarClock, Gift, Megaphone, Ticket } from "lucide-react";
+import { SubmitButton } from "@/components/submit-button";
 import { createClient } from "@/lib/supabase/server";
 import { requireOfficer } from "@/lib/manage";
 import { cloneEvent, createBlankEvent } from "@/app/actions/manage";
@@ -36,7 +37,7 @@ export default async function NewEvent() {
         <section>
           <SectionTitle>지난번 한 것에서 시작</SectionTitle>
           <form action={cloneEvent.bind(null, lead.id)}>
-            <button className="group block w-full rounded-2xl border-2 border-coral bg-surface p-5 text-left shadow-sm transition-[transform,box-shadow] duration-150 hover:shadow-md active:translate-y-px">
+            <SubmitButton className="group block w-full rounded-2xl border-2 border-coral bg-surface p-5 text-left shadow-sm transition-[transform,box-shadow] duration-150 hover:shadow-md active:translate-y-px">
               <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0">
                   <p className="text-lg font-bold">{lead.title.replace(/^\d{4}\s*(\d학기\s*)?/, "")}</p>
@@ -57,7 +58,7 @@ export default async function NewEvent() {
                   이걸로 시작하기
                 </span>
               </div>
-            </button>
+            </SubmitButton>
           </form>
         </section>
       ) : null}
@@ -70,7 +71,7 @@ export default async function NewEvent() {
             return (
               <li key={s.id}>
                 <form action={last ? cloneEvent.bind(null, last.id) : createBlankEvent.bind(null, s.name, s.kind)}>
-                  <button className="flex w-full items-center justify-between gap-3 rounded-xl border border-line bg-surface px-4 py-3.5 text-left hover:border-ink-4">
+                  <SubmitButton className="flex w-full items-center justify-between gap-3 rounded-xl border border-line bg-surface px-4 py-3.5 text-left hover:border-ink-4">
                     <span className="min-w-0">
                       <span className="block text-[14.5px] font-semibold">{s.name}</span>
                       <span className="block truncate text-[12.5px] text-ink-3">
@@ -78,7 +79,7 @@ export default async function NewEvent() {
                       </span>
                     </span>
                     <span className="text-[12.5px] font-semibold text-ink-3">가져오기</span>
-                  </button>
+                  </SubmitButton>
                 </form>
               </li>
             );
@@ -99,13 +100,13 @@ export default async function NewEvent() {
             return (
               <li key={t.label}>
                 <form action={createBlankEvent.bind(null, t.name, t.kind)}>
-                  <button className="flex w-full items-center gap-3 rounded-xl border border-dashed border-line-strong px-4 py-3.5 text-left hover:border-ink-4 hover:bg-surface">
+                  <SubmitButton className="flex w-full items-center gap-3 rounded-xl border border-dashed border-line-strong px-4 py-3.5 text-left hover:border-ink-4 hover:bg-surface">
                     <Icon className="size-[18px] shrink-0 text-ink-3" />
                     <span className="min-w-0">
                       <span className="block text-[14.5px] font-semibold">{t.label}</span>
                       <span className="block text-[12.5px] text-ink-3">{t.ex}</span>
                     </span>
-                  </button>
+                  </SubmitButton>
                 </form>
               </li>
             );

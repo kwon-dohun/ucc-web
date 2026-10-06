@@ -125,9 +125,9 @@ export function EventForm({ orgTitle, orgRoom, event, options, source, past, off
             </Row>
             <Row label="시간" hint="자주 쓰는 시간">
               <Carried>
-                <input aria-label="수령 시작" type="time" value={pickupStart} onChange={(e) => setPickupStart(e.target.value)} className="w-[5.5rem] bg-transparent outline-none" />
+                <input aria-label="수령 시작" type="time" value={pickupStart} onChange={(e) => setPickupStart(e.target.value)} className="w-[7.25rem] bg-transparent outline-none" />
                 <span className="text-ink-4">–</span>
-                <input aria-label="수령 끝" type="time" value={pickupEnd} onChange={(e) => setPickupEnd(e.target.value)} className="w-[5.5rem] bg-transparent outline-none" />
+                <input aria-label="수령 끝" type="time" value={pickupEnd} onChange={(e) => setPickupEnd(e.target.value)} className="w-[7.25rem] bg-transparent outline-none" />
               </Carried>
             </Row>
             <Row label="장소" hint="자주 쓰는 곳">
@@ -224,7 +224,7 @@ export function EventForm({ orgTitle, orgRoom, event, options, source, past, off
                   </Blank>
                 </div>
                 <Carried>
-                  <input aria-label="신청 열리는 시간" type="time" value={openTime} onChange={(e) => setOpenTime(e.target.value)} className="w-[5.5rem] bg-transparent outline-none" />
+                  <input aria-label="신청 열리는 시간" type="time" value={openTime} onChange={(e) => setOpenTime(e.target.value)} className="w-[7.25rem] bg-transparent outline-none" />
                 </Carried>
               </div>
             </Row>

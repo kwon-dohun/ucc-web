@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SubmitButton } from "@/components/submit-button";
 import { ChevronRight, CornerDownRight } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { requireOfficer } from "@/lib/manage";
@@ -60,7 +61,7 @@ export default async function ManageHome() {
   return (
     <div className="space-y-10">
       <PageHeader
-        title={`${viewer.profile.name}님, 오늘 챙길 게 ${todo.length ? `${todo.length}가지 있어요` : "없어요"}`}
+        title={`${viewer.profile.name.slice(1)}님, 오늘 챙길 게 ${todo.length ? `${todo.length}가지 있어요` : "없어요"}`}
         description={`${orgTitle} · ${membership.title}`}
       />
 
@@ -130,9 +131,9 @@ export default async function ManageHome() {
                         ) : null}
                       </div>
                       <form action={cloneEvent.bind(null, last!.id)}>
-                        <button className="inline-flex h-9 items-center rounded-[10px] bg-ink px-3.5 text-[13px] font-semibold text-white hover:bg-ink-2">
+                        <SubmitButton className="inline-flex h-9 items-center rounded-[10px] bg-ink px-3.5 text-[13px] font-semibold text-white hover:bg-ink-2">
                           이걸로 시작하기
-                        </button>
+                        </SubmitButton>
                       </form>
                     </div>
                   </li>
@@ -184,9 +185,9 @@ export default async function ManageHome() {
                       placeholder="답변 쓰기"
                       className="h-10 min-w-0 flex-1 rounded-[10px] border border-line-strong bg-surface px-3 text-[14px] outline-none placeholder:text-ink-4 focus:border-coral"
                     />
-                    <button className="h-10 shrink-0 rounded-[10px] bg-panel px-3.5 text-[13px] font-semibold text-ink-2 hover:bg-line hover:text-ink">
+                    <SubmitButton className="h-10 shrink-0 rounded-[10px] bg-panel px-3.5 text-[13px] font-semibold text-ink-2 hover:bg-line hover:text-ink">
                       답하기
-                    </button>
+                    </SubmitButton>
                   </form>
                 </li>
               ))}
