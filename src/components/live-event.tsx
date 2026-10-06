@@ -41,12 +41,12 @@ export function LiveEvent({ event, options: initialOptions, applicants: initialA
   const [applicants, setApplicants] = useState(initialApplicants);
   const [fresh, setFresh] = useState<Set<string>>(new Set());
   const [tab, setTab] = useState<Tab>("applied");
-  const [, forceTick] = useState(0);
+  const [now, setNow] = useState(() => Date.now());
   const known = useRef(new Set(initialApplicants.map((a) => a.id)));
 
   // 1분마다 "3분 전" 같은 상대 시간을 다시 그린다
   useEffect(() => {
-    const t = setInterval(() => forceTick((n) => n + 1), 30_000);
+    const t = setInterval(() => setNow(Date.now()), 30_000);
     return () => clearInterval(t);
   }, []);
 
@@ -118,7 +118,7 @@ export function LiveEvent({ event, options: initialOptions, applicants: initialA
   const taken = options.reduce((s, o) => s + o.taken, 0);
   const remaining = total - taken;
   const picked = applicants.filter((a) => a.picked_up_at).length;
-  const phase = eventPhase(event, remaining);
+  const phase = eventPhase(event, remaining, now);
   const optionName = (id: string) => options.find((o) => o.id === id)?.name ?? "";
 
   const [simulating, startSimulate] = useTransition();
@@ -129,6 +129,15 @@ export function LiveEvent({ event, options: initialOptions, applicants: initialA
       else if (!data) toast("더 신청할 학생이 없거나 다 나갔어요");
     });
   }
+
+  const openedMin = event.opens_at ? Math.max(0, Math.round((now - new Date(event.opens_at).getTime()) / 60000)) : null;
+  const lowest = [...options].filter((o) => o.quantity - o.taken > 0).sort((a, b) => a.quantity - a.taken - (b.quantity - b.taken))[0];
+  const sentence =
+    phase === "open"
+      ? `${openedMin != null ? `열린 지 ${openedMin < 60 ? `${openedMin}분` : `${Math.floor(openedMin / 60)}시간`}, ` : ""}${taken}명이 신청했어요.${lowest ? ` ${lowest.name} ${lowest.quantity - lowest.taken}개 남았어요.` : ""}`
+      : phase === "soldout"
+        ? `${total}개가 모두 신청됐어요. 안 받은 사람 ${applicants.length - picked}명.`
+        : `${picked}명 받아감, 안 받은 사람 ${applicants.length - picked}명.`;
 
   const header = (
     <div className="flex flex-wrap items-start justify-between gap-3">
@@ -148,12 +157,12 @@ export function LiveEvent({ event, options: initialOptions, applicants: initialA
         </p>
       </div>
       {variant === "summary" ? (
-        <Link href={`/manage/events/${event.id}`} className={buttonStyles({ variant: "secondary", size: "sm" })}>
+        <Link href={`/manage/events/${event.id}`} className={buttonStyles({ variant: "secondary", size: "sm", className: "h-11 sm:h-8" })}>
           운영 화면 열기
           <ChevronRight />
         </Link>
       ) : (
-        <Link href={`/events/${event.id}`} className={buttonStyles({ variant: "ghost", size: "sm" })}>
+        <Link href={`/events/${event.id}`} className={buttonStyles({ variant: "secondary", size: "sm", className: "h-11 sm:h-8" })}>
           학생 화면 보기
         </Link>
       )}
@@ -161,7 +170,11 @@ export function LiveEvent({ event, options: initialOptions, applicants: initialA
   );
 
   const counters = (
-    <div className="mt-5 grid grid-cols-[repeat(var(--cols),minmax(0,1fr))] gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-[1.1fr_repeat(var(--n),1fr)]" style={{ "--n": options.length, "--cols": options.length + 1 } as React.CSSProperties}>
+    <>
+    <p className="mt-4 text-[15px] leading-6 font-semibold text-ink md:text-base" aria-live="polite">
+      {sentence}
+    </p>
+    <div className="mt-3 grid grid-cols-[repeat(var(--cols),minmax(0,1fr))] gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-[1.1fr_repeat(var(--n),1fr)]" style={{ "--n": options.length, "--cols": options.length + 1 } as React.CSSProperties}>
       <div className="min-w-0 bg-surface px-3 py-3 sm:px-4 sm:py-4">
         <p className="text-[12.5px] font-medium text-ink-3">신청</p>
         <p className="mt-1 flex items-baseline gap-1">
@@ -183,18 +196,19 @@ export function LiveEvent({ event, options: initialOptions, applicants: initialA
                 value={left}
                 className={cn("text-[26px] leading-8 font-bold sm:text-[34px] sm:leading-10", left === 0 ? "text-ink-4" : low ? "text-coral-ink" : "text-ink")}
               />
-              <span className="text-[12px] font-semibold text-ink-3 sm:text-[13px]">개<span className="hidden sm:inline"> 남음</span></span>
+              <span className="text-[12px] font-semibold text-ink-3 sm:text-[13px]">남음</span>
             </p>
             <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-panel" aria-hidden>
               <div
                 className={cn("h-full rounded-full transition-[width] duration-500 ease-out", left === 0 ? "bg-ink-4" : "bg-coral")}
-                style={{ width: `${(o.taken / Math.max(1, o.quantity)) * 100}%` }}
+                style={{ width: `${(left / Math.max(1, o.quantity)) * 100}%` }}
               />
             </div>
           </div>
         );
       })}
     </div>
+    </>
   );
 
   const recent = (
@@ -216,7 +230,7 @@ export function LiveEvent({ event, options: initialOptions, applicants: initialA
             방금 들어온 신청 <span className="num font-semibold text-ink-3">{applicants.length}</span>
           </h3>
           {phase === "open" ? (
-            <Button variant="ghost" size="sm" onClick={simulate} disabled={simulating}>
+            <Button variant="ghost" size="sm" className="h-11 sm:h-8" onClick={simulate} disabled={simulating}>
               <UserPlus />
               {simulating ? "들어오는 중" : "데모: 신청 3건 더"}
             </Button>
@@ -249,7 +263,7 @@ export function LiveEvent({ event, options: initialOptions, applicants: initialA
             aria-selected={tab === key}
             onClick={() => setTab(key)}
             className={cn(
-              "num h-10 flex-1 rounded-lg px-2 text-[12.5px] font-semibold whitespace-nowrap transition-colors sm:px-3 sm:text-[13.5px]",
+              "num h-11 flex-1 rounded-lg px-2 text-[12.5px] font-semibold whitespace-nowrap transition-colors sm:px-3 sm:text-[13.5px]",
               tab === key ? "bg-surface text-ink shadow-sm" : "text-ink-3 hover:text-ink",
             )}
           >
@@ -264,7 +278,7 @@ export function LiveEvent({ event, options: initialOptions, applicants: initialA
             <div className="mb-2 flex items-center justify-between gap-3">
               <p className="text-[13px] text-ink-3">누가 몇 번째로 들어왔는지 실시간으로 쌓여요.</p>
               {phase === "open" ? (
-                <Button variant="ghost" size="sm" onClick={simulate} disabled={simulating}>
+                <Button variant="ghost" size="sm" className="h-11 sm:h-8" onClick={simulate} disabled={simulating}>
                   <UserPlus />
                   {simulating ? "들어오는 중" : "데모: 신청 3건 더"}
                 </Button>

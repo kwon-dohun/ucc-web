@@ -14,3 +14,6 @@ STORY: 운영진이 작년 간식행사를 복제해 바뀌는 4칸만 채워 �
 FIRST VIEWPORT: 운영 홈 = 왼쪽 사이드바(홈·찾기·캘린더·소속 + 운영 섹션), 본문 상단에 "오늘 챙길 것" 한 줄 요약, 바로 아래 진행 중 행사 한 건이 가로 전체를 쓰는 라이브 패널(메뉴별 남은 개수가 실시간으로 줄어드는 큰 숫자, 신청 명단 최근 순). 주요 행동 "새 행사 만들기"는 사이드바 운영 섹션 맨 위 코럴 버튼 하나.
 FORM: 제품 UI 관례(사이드바+본문, 모바일 하단 탭바) 위에 기록 문장 체계. 시그니처 인터랙션: 라이브 남은 개수 숫자가 바뀔 때 세로로 넘어가는 숫자 롤, 그리고 복제 폼에서 지난번 값은 회색으로 채워지고 바꿀 칸만 코럴 점선 빈칸. seed: condensed (brand-pinned, no roll)
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+
+## Waiver (concept roll)
+The direction roll was skipped by the builder, not explicitly by the user. Grounds: the user's confirmed brand commitments pin palette (coral #F0503F), face (Pretendard), voice (해요체, numbers-as-sentences), and the surface is Operate mode where earned familiarity (sidebar + body, mobile tab bar) is the rut-correct choice. Layout was not user-pinned; the user may request a roll at any time. Disclosed to the user in the session report.

@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { requireOfficer } from "@/lib/manage";
 import { loadEventConsole } from "@/lib/events";
 import { LiveEvent } from "@/components/live-event";
+import { StatsLine } from "@/components/stats-line";
 import { Badge, ButtonLink, Empty, PageHeader, SectionTitle } from "@/components/ui";
 import { answerSuggestion, cloneEvent } from "@/app/actions/manage";
 import { daysOverdue, fmtDate, minutesLabel, msAgo, semesterLabel } from "@/lib/format";
@@ -53,10 +54,10 @@ export default async function ManageHome() {
     .map((e) => ({ series: seriesById.get(e.series_id!)!, last: e }));
 
   const todo = [
-    overdue?.length ? { href: "/manage/rental", text: `1일 넘게 반납 안 된 대여 ${overdue.length}건`, tone: "coral" as const } : null,
+    overdue?.length ? { href: "/manage/rental", text: `1일 넘게 반납 안 된 대여 ${overdue.length}건`, tone: "amber" as const } : null,
     waiting?.length ? { href: "#suggestions", text: `답을 기다리는 건의 ${waiting.length}개`, tone: "neutral" as const } : null,
     drafts.length ? { href: `/manage/events/${drafts[0].id}/edit`, text: `만들다 만 초안 ${drafts.length}개`, tone: "neutral" as const } : null,
-  ].filter(Boolean) as { href: string; text: string; tone: "coral" | "neutral" }[];
+  ].filter(Boolean) as { href: string; text: string; tone: "amber" | "neutral" }[];
 
   return (
     <div className="space-y-10">
@@ -65,6 +66,22 @@ export default async function ManageHome() {
         description={`${orgTitle} · ${membership.title}`}
       />
 
+      <nav aria-label="운영 메뉴" className="-mt-4 flex gap-2 overflow-x-auto pb-1 lg:hidden">
+        <Link href="/manage/events/new" className="inline-flex h-11 shrink-0 items-center rounded-[10px] bg-coral px-4 text-[14px] font-semibold text-white">
+          새 행사 만들기
+        </Link>
+        {[
+          ["/manage/events", "사업·행사"],
+          ["/manage/rental", "대여 관리"],
+          ["/manage/history", "지난 활동"],
+          ["/manage/team", "조직도 · 임기"],
+        ].map(([h, l]) => (
+          <Link key={h} href={h} className="inline-flex h-11 shrink-0 items-center rounded-[10px] border border-line-strong bg-surface px-3.5 text-[13.5px] font-semibold text-ink-2">
+            {l}
+          </Link>
+        ))}
+      </nav>
+
       {todo.length ? (
         <ul className="-mt-6 flex flex-wrap gap-2">
           {todo.map((t) => (
@@ -72,8 +89,8 @@ export default async function ManageHome() {
               <Link
                 href={t.href}
                 className={
-                  t.tone === "coral"
-                    ? "inline-flex h-9 items-center gap-1 rounded-full bg-coral-tint px-3.5 text-[13px] font-semibold text-coral-ink hover:bg-coral-line/50"
+                  t.tone === "amber"
+                    ? "inline-flex h-9 items-center gap-1 rounded-full bg-amber-tint px-3.5 text-[13px] font-semibold text-amber-ink hover:brightness-95"
                     : "inline-flex h-9 items-center gap-1 rounded-full border border-line-strong bg-surface px-3.5 text-[13px] font-semibold text-ink-2 hover:border-ink-4"
                 }
               >
@@ -106,7 +123,7 @@ export default async function ManageHome() {
         />
       )}
 
-      <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr]">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.25fr_1fr] [&>section]:min-w-0">
         <section>
           <SectionTitle aside={<Link href="/manage/history" className="hover:text-ink">지난 활동 전체</Link>}>
             작년 이맘때 한 것
@@ -123,6 +140,11 @@ export default async function ManageHome() {
                         <p className="mt-1 text-[13px] leading-5 text-ink-3">
                           작년엔 {fmtDate(last.finished_at!)}에 했어요 · {semesterLabel(last.semester)} {last.title.replace(/^\d{4}\s*(\d학기\s*)?/, "")}
                         </p>
+                        {!st.sold_out_minutes && st.applied ? (
+                          <p className="mt-2 text-[13.5px] text-ink-2">
+                            <StatsLine stats={st} />
+                          </p>
+                        ) : null}
                         {st.sold_out_minutes ? (
                           <p className="mt-2 text-[13.5px] text-ink-2">
                             <span className="num">{st.total}</span>개가 <b className="font-semibold text-ink">{minutesLabel(st.sold_out_minutes)}</b> 만에 마감,
@@ -131,7 +153,7 @@ export default async function ManageHome() {
                         ) : null}
                       </div>
                       <form action={cloneEvent.bind(null, last!.id)}>
-                        <SubmitButton className="inline-flex h-9 items-center rounded-[10px] bg-ink px-3.5 text-[13px] font-semibold text-white hover:bg-ink-2">
+                        <SubmitButton className="inline-flex h-10 shrink-0 items-center rounded-[10px] bg-ink px-3.5 text-[13px] font-semibold whitespace-nowrap text-white hover:bg-ink-2">
                           이걸로 시작하기
                         </SubmitButton>
                       </form>
@@ -208,7 +230,7 @@ export default async function ManageHome() {
                       <CornerDownRight className="size-3.5 text-ink-4" />
                       {r.item?.name} {r.qty}개
                     </span>
-                    <span className="num font-semibold text-coral-ink">{daysOverdue(r.lent_at)}일 지남</span>
+                    <span className="num font-semibold text-amber-ink">{daysOverdue(r.lent_at)}일 지남</span>
                   </li>
                 ))}
               </ul>
