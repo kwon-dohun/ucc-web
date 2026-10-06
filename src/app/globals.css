@@ -1,26 +1,166 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
+/* UCC 토큰: 밝은 작업면, 차가운 회색 바탕, 코럴은 행동과 지금에만 */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ground: #f4f5f7;
+  --surface: #ffffff;
+  --surface-2: #f9fafb;
+  --panel: #eef0f3;
+  --ink: #15181d;
+  --ink-2: #4a515c;
+  --ink-3: #6b7380;
+  --ink-4: #a3aab5;
+  --line: #e3e6eb;
+  --line-strong: #cfd4db;
+
+  --coral: #f0503f;
+  --coral-deep: #d3382a;
+  --coral-ink: #b8301f;
+  --coral-tint: #fdeeec;
+  --coral-line: #f6b9b1;
+
+  --green: #0e9b72;
+  --green-ink: #0a7656;
+  --green-tint: #e6f5f0;
+
+  --amber-ink: #8a5a00;
+  --amber-tint: #fdf3dc;
+
+  --d-plan: #3d5ae0;
+  --d-admin: #0e9b72;
+  --d-promo: #f0503f;
+  --d-head: #7c5bd6;
+
+  --shadow-sm: 0 1px 2px rgba(21, 24, 29, 0.06), 0 2px 6px -2px rgba(21, 24, 29, 0.06);
+  --shadow-md: 0 2px 4px rgba(21, 24, 29, 0.04), 0 10px 24px -12px rgba(21, 24, 29, 0.18);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-pretendard), system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif;
+
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-panel: var(--panel);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-ink-4: var(--ink-4);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-coral: var(--coral);
+  --color-coral-deep: var(--coral-deep);
+  --color-coral-ink: var(--coral-ink);
+  --color-coral-tint: var(--coral-tint);
+  --color-coral-line: var(--coral-line);
+  --color-green: var(--green);
+  --color-green-ink: var(--green-ink);
+  --color-green-tint: var(--green-tint);
+  --color-amber-ink: var(--amber-ink);
+  --color-amber-tint: var(--amber-tint);
+  --color-d-plan: var(--d-plan);
+  --color-d-admin: var(--d-admin);
+  --color-d-promo: var(--d-promo);
+  --color-d-head: var(--d-head);
+
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+  html {
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+  }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.012em;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+  ::selection {
+    background: var(--coral-tint);
+    color: var(--coral-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--coral);
+    outline-offset: 2px;
+  }
+  input,
+  textarea,
+  select {
+    caret-color: var(--coral);
+  }
+  @media (max-width: 767px) {
+    input,
+    textarea,
+    select {
+      font-size: 16px;
+    }
+  }
+  a {
+    text-underline-offset: 3px;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    letter-spacing: -0.025em;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility num {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* 숫자 롤: 남은 개수가 바뀔 때 세로로 넘어간다 */
+@keyframes roll-in {
+  from {
+    transform: translateY(55%);
+    opacity: 0;
+    filter: blur(2px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@keyframes row-in {
+  from {
+    background-color: var(--coral-tint);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+.animate-roll-in {
+  animation: roll-in 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-row-in {
+  animation: row-in 1600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-roll-in,
+  .animate-row-in {
+    animation: none;
+  }
 }
