@@ -161,12 +161,12 @@ export function LiveEvent({ event, options: initialOptions, applicants: initialA
   );
 
   const counters = (
-    <div className="mt-5 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-[1.1fr_repeat(var(--n),1fr)]" style={{ "--n": options.length } as React.CSSProperties}>
-      <div className="bg-surface px-4 py-4">
+    <div className="mt-5 grid grid-cols-[repeat(var(--cols),minmax(0,1fr))] gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-[1.1fr_repeat(var(--n),1fr)]" style={{ "--n": options.length, "--cols": options.length + 1 } as React.CSSProperties}>
+      <div className="min-w-0 bg-surface px-3 py-3 sm:px-4 sm:py-4">
         <p className="text-[12.5px] font-medium text-ink-3">신청</p>
         <p className="mt-1 flex items-baseline gap-1">
-          <RollingNumber value={taken} className="text-[34px] leading-10 font-bold" />
-          <span className="num text-[15px] font-semibold text-ink-3">/ {total}</span>
+          <RollingNumber value={taken} className="text-[26px] leading-8 font-bold sm:text-[34px] sm:leading-10" />
+          <span className="num text-[13px] font-semibold text-ink-3 sm:text-[15px]">/ {total}</span>
         </p>
         <p className="mt-1 text-[12.5px] text-ink-3">
           {picked > 0 ? `${picked}명 받아감` : remaining > 0 ? `${remaining}개 남음` : "모두 신청됐어요"}
@@ -176,14 +176,14 @@ export function LiveEvent({ event, options: initialOptions, applicants: initialA
         const left = o.quantity - o.taken;
         const low = left > 0 && left <= Math.max(3, Math.round(o.quantity * 0.15));
         return (
-          <div key={o.id} className="bg-surface px-4 py-4">
+          <div key={o.id} className="min-w-0 bg-surface px-3 py-3 sm:px-4 sm:py-4">
             <p className="truncate text-[12.5px] font-medium text-ink-3">{o.name}</p>
             <p className="mt-1 flex items-baseline gap-1">
               <RollingNumber
                 value={left}
-                className={cn("text-[34px] leading-10 font-bold", left === 0 ? "text-ink-4" : low ? "text-coral-ink" : "text-ink")}
+                className={cn("text-[26px] leading-8 font-bold sm:text-[34px] sm:leading-10", left === 0 ? "text-ink-4" : low ? "text-coral-ink" : "text-ink")}
               />
-              <span className="text-[13px] font-semibold text-ink-3">개 남음</span>
+              <span className="text-[12px] font-semibold text-ink-3 sm:text-[13px]">개<span className="hidden sm:inline"> 남음</span></span>
             </p>
             <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-panel" aria-hidden>
               <div
@@ -237,8 +237,8 @@ export function LiveEvent({ event, options: initialOptions, applicants: initialA
       <div role="tablist" aria-label="운영 단계" className="mt-6 flex gap-1 overflow-x-auto rounded-xl bg-panel p-1">
         {(
           [
-            ["applied", `신청 현황 ${applicants.length}`],
-            ["pickup", `수령 체크 ${picked}/${applicants.length}`],
+            ["applied", `신청 ${applicants.length}`],
+            ["pickup", `수령 ${picked}/${applicants.length}`],
             ["walkup", "현장 배부"],
             ["finish", "끝내기"],
           ] as [Tab, string][]
@@ -249,7 +249,7 @@ export function LiveEvent({ event, options: initialOptions, applicants: initialA
             aria-selected={tab === key}
             onClick={() => setTab(key)}
             className={cn(
-              "num h-10 flex-1 rounded-lg px-3 text-[13.5px] font-semibold whitespace-nowrap transition-colors",
+              "num h-10 flex-1 rounded-lg px-2 text-[12.5px] font-semibold whitespace-nowrap transition-colors sm:px-3 sm:text-[13.5px]",
               tab === key ? "bg-surface text-ink shadow-sm" : "text-ink-3 hover:text-ink",
             )}
           >

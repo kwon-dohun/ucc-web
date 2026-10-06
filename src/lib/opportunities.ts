@@ -24,7 +24,7 @@ export function countsTowardEpic(o: Opportunity, p: Profile) {
 /** 추천 이유: 원문과 학생이 고른 정보에서 확인되는 사실만 */
 export function reasons(o: Opportunity, p: Profile): string[] {
   const out: string[] = [];
-  if (o.eligible_grades?.length && o.eligible_grades.includes(p.grade)) out.push(`${p.grade}학년에게 맞는 회차예요`);
+  if (o.eligible_grades?.length && o.eligible_grades.includes(p.grade)) out.push(o.source_kind === "epic" ? `${p.grade}학년에게 맞는 회차예요` : `${p.grade}학년이 대상이에요`);
   if (o.eligible_departments?.includes(p.department_id) && o.source_kind === "department")
     out.push("학과 홈페이지에만 올라와서 놓치기 쉬운 공지예요");
   if (o.department_id && o.department_id !== p.department_id && !o.eligible_departments?.length)

@@ -46,8 +46,8 @@ export default async function Home() {
         </header>
 
         <section>
-          <SectionTitle aside={<Link href="/calendar" className="hover:text-ink">캘린더 전체</Link>}>앞으로 열흘</SectionTitle>
-          <Agenda items={items} bands={bands} days={10} />
+          <SectionTitle aside={<Link href="/calendar" className="hover:text-ink">캘린더 전체</Link>}>앞으로 2주</SectionTitle>
+          <Agenda items={items} bands={bands} days={16} />
         </section>
 
         <section>
