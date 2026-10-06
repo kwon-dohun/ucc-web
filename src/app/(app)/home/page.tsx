@@ -39,10 +39,10 @@ export default async function Home() {
     <div className="grid gap-10 lg:grid-cols-[1fr_340px]">
       <div className="min-w-0 space-y-10">
         <header>
-          <p className="text-[13px] text-ink-3">
+          <h1 className="text-[22px] leading-8 font-bold md:text-2xl">{profile.name.slice(1)}님의 이번 주</h1>
+          <p className="mt-0.5 text-[13px] text-ink-3">
             {department.name} {profile.grade}학년
           </p>
-          <h1 className="mt-0.5 text-[22px] leading-8 font-bold md:text-2xl">{profile.name.slice(1)}님의 이번 주</h1>
         </header>
 
         <section>

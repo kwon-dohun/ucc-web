@@ -85,7 +85,6 @@ export function EventForm({ orgTitle, orgRoom, event, options, source, past, off
 
       <header className="flex flex-wrap items-end justify-between gap-4">
         <div className="min-w-0">
-          <p className="text-[13px] text-ink-3">{orgTitle}</p>
           <input
             aria-label="행사 이름"
             value={title}
@@ -95,9 +94,11 @@ export function EventForm({ orgTitle, orgRoom, event, options, source, past, off
           {source ? (
             <p className="mt-1.5 flex items-center gap-1.5 text-[13px] text-ink-3">
               <CornerDownLeft className="size-3.5" />
-              {source.title}에서 가져왔어요. 회색 글씨는 지난번 값 그대로예요.
+              {orgTitle} · {source.title}에서 가져왔어요. 회색 글씨는 지난번 값 그대로예요.
             </p>
-          ) : null}
+          ) : (
+            <p className="mt-1.5 text-[13px] text-ink-3">{orgTitle}</p>
+          )}
         </div>
         <Badge tone={blanks.length ? "coral" : "green"}>{blanks.length ? `채울 칸 ${blanks.length}` : "다 채웠어요"}</Badge>
       </header>

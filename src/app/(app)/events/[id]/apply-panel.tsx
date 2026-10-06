@@ -131,8 +131,8 @@ export function ApplyPanel({
     return (
       <Shell orgShort={orgShort}>
         <div className="rounded-2xl border border-line bg-surface p-5 shadow-sm md:p-7">
-          <p className="text-[13px] text-ink-3">{orgTitle}</p>
-          <h1 className="mt-1 text-[22px] leading-8 font-bold">{event.title}</h1>
+          <h1 className="text-[22px] leading-8 font-bold">{event.title}</h1>
+          <p className="mt-0.5 text-[13px] text-ink-3">{orgTitle}</p>
           <dl className="mt-5 grid grid-cols-[4.25rem_1fr] gap-x-3 gap-y-2 text-[14px] leading-6">
             <dt className="text-ink-3">언제</dt>
             <dd className="font-medium">{event.opens_at ? fmtDate(event.opens_at) : "날짜 미정"}</dd>
@@ -152,8 +152,8 @@ export function ApplyPanel({
   return (
     <Shell orgShort={orgShort}>
       <div className="rounded-2xl border border-line bg-surface p-5 shadow-sm md:p-7">
-        <p className="text-[13px] text-ink-3">{orgTitle}</p>
-        <h1 className="mt-1 text-[22px] leading-8 font-bold">{event.title}</h1>
+        <h1 className="text-[22px] leading-8 font-bold">{event.title}</h1>
+        <p className="mt-0.5 text-[13px] text-ink-3">{orgTitle}</p>
         {event.greeting ? <p className="mt-2 text-[14.5px] leading-6 text-ink-2">{event.greeting}</p> : null}
 
         {phase === "scheduled" ? (

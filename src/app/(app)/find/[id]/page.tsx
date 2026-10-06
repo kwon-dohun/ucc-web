@@ -34,12 +34,12 @@ export default async function OpportunityPage({ params }: PageProps<"/find/[id]"
       </Link>
 
       <article className="rounded-2xl border border-line bg-surface p-5 shadow-sm md:p-7">
-        <div className="flex flex-wrap items-center gap-1.5 text-[12.5px] text-ink-3">
+        <h1 className="text-[22px] leading-8 font-bold">{o.title}</h1>
+        <div className="mt-1.5 flex flex-wrap items-center gap-1.5 text-[12.5px] text-ink-3">
           <span>{o.source}</span>
           {o.department_id && o.department_id !== profile.department_id ? <Badge>다른 학과</Badge> : null}
           {o.epic_points ? <Badge tone={counts ? "green" : "neutral"}>EPiC {o.epic_points}점</Badge> : null}
         </div>
-        <h1 className="mt-2 text-[22px] leading-8 font-bold">{o.title}</h1>
         <p className="mt-2 text-[14.5px] leading-6 text-ink-2">{o.summary}</p>
 
         <section className={ok ? "mt-5 rounded-xl bg-green-tint p-4" : "mt-5 rounded-xl bg-surface-2 p-4"}>
